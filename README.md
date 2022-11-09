@@ -28,4 +28,12 @@ Then, run the commands listed in the `Preparing the Environment` section.
 
 After successfully ran the script, you're going to see the ouptput of all the users it sent the file to.
 
+## Video File Link
+
+Full code running video is uploaded in this google drive 
+
+## Future Plans
+
+We can also input all the followers into accounts.txt file and then run the script it will save time. We can also use Flask Module to integrate the Backend with a Frontend and type all the input in the Frontend.
+
 
