@@ -40,5 +40,4 @@ https://drive.google.com/drive/folders/1w2y8mm2tS6gcoTtkI99pWj9nNkM4v4_N?usp=sha
 
 We can also input all the followers into accounts.txt file and then run the script it will save time. We can also use Flask Module to integrate the Backend with a Frontend and type all the input in the Frontend.
 
-DEMO
-https://drive.google.com/drive/folders/1w2y8mm2tS6gcoTtkI99pWj9nNkM4v4_N?usp=sharing
+
