@@ -8,20 +8,26 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import random,time
-
+options = webdriver.ChromeOptions() 
+options.add_argument("start-maximized")
+# to supress the error messages/logs
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 #Enter username and password
 user=str(input('Username: '))
 pswd=str(input('Password: '))
 #List of Recievers
 receiver=[]
+
 #define text file to open
 my_file = open('accounts.txt', 'r')
 #read text file into list
 receiver = my_file.read().split()
 #Select the driver, In our case we will use Chrome.
-chromedriver_path = '/usr/local/bin/chromedriver' # Change this to your own chromedriver path!
-browser = webdriver.Chrome('chromedriver')
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+browser = webdriver.Chrome(options=options)
+
 s=Service('Chromedriver PATH')
 #Message you want to send along with the post
 message=str(input('Message you want to send along with the post: '))
@@ -80,7 +86,7 @@ def send_post(users, messages):
             time.sleep(random.randrange(3,4))
             browser.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[1]').click()#find_element(By.TAG_NAME,'button').click()
             time.sleep(random.randrange(3,4))
-            print(f'Post selected for {user}')
+            print(f'Message sent to {user}')
         #Entering message in messaging area
         text_area = browser.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[3]/input')
         text_area.send_keys(messages)
